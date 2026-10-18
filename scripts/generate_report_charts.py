@@ -67,7 +67,7 @@ def extract_full_model_data(excel_path: str) -> dict:
     ws_cf = wb["CF_Direct"]
     ws_pr = wb["Prices"]
 
-    years = [ws.cell(5, c).value for c in range(5, 20)]  # FY21A .. FY35E
+    years = [ws.cell(40, c).value for c in range(5, 20)]  # FY21A .. FY35E
 
     def row_series(r, start_c=5, end_c=19):
         return [float(ws.cell(r, c).value or 0.0) for c in range(start_c, end_c + 1)]
